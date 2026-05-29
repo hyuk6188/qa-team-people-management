@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>충주공장 품질보증팀 인원현황</title>
+<style>
+:root{--card:#fff;--ink:#172033;--muted:#6b7280;--blue:#2563eb;--line:#e5e7eb;--shadow:0 18px 40px rgba(15,23,42,.10);--radius:22px}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f7fb;color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 52px}.hero{background:linear-gradient(135deg,#0f172a,#1e3a8a 55%,#2563eb);border-radius:28px;color:#fff;padding:34px;box-shadow:var(--shadow)}
+.eyebrow{font-size:13px;letter-spacing:.22em;font-weight:800;opacity:.8}.hero h1{margin:8px 0;font-size:clamp(28px,4vw,46px);line-height:1.1}.hero p{margin:0;color:#dbeafe}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{border-radius:999px;padding:8px 13px;font-size:13px;font-weight:750;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.20)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 24px rgba(15,23,42,.06)}.kpi{padding:20px}.kpi small{color:var(--muted);font-weight:800}.kpi b{display:block;font-size:32px;margin-top:6px}.kpi span,.sub{font-size:13px;color:var(--muted)}
+.add-form{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.add-form input,.add-form select{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px}.add-form button{border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:900;cursor:pointer}.grid{display:grid;grid-template-columns:1fr;gap:18px}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.card{padding:20px}.card h2{margin:0 0 8px;font-size:24px}.sub{margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}
+th:nth-child(5),th:nth-child(6),th:nth-child(7),th:nth-child(8),
+td:nth-child(5),td:nth-child(6),td:nth-child(7),td:nth-child(8){text-align:center;}th{color:#475569;font-size:12px;background:#f8fafc}tbody tr:hover{background:#f8fbff}.mbti{font-weight:900;color:#1d4ed8;background:#eaf2ff;border-radius:999px;padding:5px 9px;display:inline-block;min-width:52px;text-align:center}.solar{font-size:12px;background:#ecfdf5;color:#047857;padding:4px 8px;border-radius:999px;font-weight:800}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}.person{background:#fff;color:#172033;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 8px 20px rgba(15,23,42,.05)}.avatar{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:grid;place-items:center;color:#1d4ed8;font-weight:900;margin-bottom:12px}.person h3{margin:0;font-size:17px}.person p{margin:6px 0;color:var(--muted);font-size:13px}.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tag{border:1px solid var(--line);border-radius:999px;padding:5px 8px;font-size:12px;background:#f8fafc;color:#475569;font-weight:700}
+.typebox{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.type{border-radius:18px;padding:14px;background:#f8fafc;border:1px solid var(--line);cursor:pointer;transition:.15s}.type:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(15,23,42,.08)}.type b{display:block;font-size:22px}.type small{color:var(--muted);font-weight:750}.footer{margin-top:22px;text-align:center;color:#94a3b8;font-size:12px}
+/* ─── 휴가 관리 섹션 ─── */
+.vac-section{margin-top:18px}
+.vac-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.vac-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.vac-kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.vac-kpi small{color:var(--muted);font-weight:800;font-size:12px}
+.vac-kpi b{display:block;font-size:28px;margin-top:4px}
+.vac-kpi span{font-size:12px;color:var(--muted)}
+.vac-add-btn{border:0;border-radius:14px;background:#059669;color:#fff;font-weight:900;padding:11px 16px;cursor:pointer;font-size:14px}
+.vac-table-wrap{overflow-x:auto}
+.vac-bar-wrap{background:#e9ecef;border-radius:999px;height:8px;min-width:80px;overflow:hidden}
+.vac-bar{height:8px;border-radius:999px;transition:.3s}
+.vac-used-tag{display:inline-block;font-size:12px;font-weight:800;padding:4px 8px;border-radius:999px}
+.vac-log-btn{border:0;border-radius:10px;background:#ecfdf5;color:#047857;font-weight:900;padding:7px 10px;cursor:pointer;font-size:13px}
+.vac-del-btn{border:0;border-radius:10px;background:#fef2f2;color:#dc2626;font-weight:900;padding:7px 10px;cursor:pointer;font-size:13px}
+.vac-add-form{display:grid;grid-template-columns:1fr;gap:10px;margin-top:18px}
+.vac-add-form input,.vac-add-form select{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;color:#111827}
+.vac-add-form button[type=submit]{border:0;border-radius:12px;background:#059669;color:#fff;font-weight:900;padding:12px;cursor:pointer}
+.vac-log-list{list-style:none;margin:16px 0 0;padding:0}
+.vac-log-list li{padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#f8fafc;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.vac-log-list li .vac-log-del{border:0;background:#fef2f2;color:#dc2626;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px}
+.vac-log-entry{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.badge-green{background:#dcfce7;color:#14532d}
+.badge-yellow{background:#fef3c7;color:#78350f}
+.badge-red{background:#fee2e2;color:#7f1d1d}
+@media(max-width:900px){.vac-kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.vac-kpis{grid-template-columns:1fr}}
+.popup{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9999;align-items:center;justify-content:center;padding:18px}.popup.show{display:flex}.popup-box{width:min(600px,100%);background:#fff;color:#172033;border-radius:22px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.25)}.popup-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.popup-head h3{margin:0;font-size:21px}.xbtn{border:0;background:#f1f5f9;border-radius:12px;padding:8px 12px;cursor:pointer;font-weight:900}.editBtn{border:0;border-radius:10px;background:#eef4ff;color:#1d4ed8;font-weight:900;padding:7px 10px;cursor:pointer}.popup-list{list-style:none;margin:18px 0 0;padding:0}.popup-list li{list-style:none;padding:12px;border:1px solid var(--line);border-radius:14px;margin-bottom:8px;background:#f8fafc;word-break:keep-all;overflow:visible}.popup-list b{display:block}.popup-list span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){.hero h1{white-space:normal}.kpis,.cards{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:1fr}.tablewrap{overflow-x:auto}}@media(max-width:560px){.kpis,.cards,.typebox{grid-template-columns:1fr}}
+input{color:#9ca3af !important;}
+select,select option{color:#111827 !important;}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px">
+    <div><div class="eyebrow">EMPLOYEE REPORT</div><h1>충주공장 품질보증팀 인원현황</h1><p style="margin:6px 0 0;color:#dbeafe;font-size:14px">목제가구의 생산부터 사후관리까지 전 과정의 품질 및 고객 만족을 보증합니다.</p></div>
+    <button id="openDataMgr" style="border:0;border-radius:16px;background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.35);color:#fff;font-weight:900;font-size:14px;padding:12px 20px;cursor:pointer;margin-top:6px">⚙️ 데이터 관리</button>
+  </div>
+</section>
+<section class="kpis"><div class="kpi" data-topkpi="total" style="cursor:pointer"><small>전체 인원</small><b id="kpiTotal">-</b><span>등록 직원 수</span></div><div class="kpi" data-topkpi="join" style="cursor:pointer"><small>2026년 입사자</small><b id="kpiJoin">-</b><span id="kpiJoinSub">신규 인원</span></div><div class="kpi" data-topkpi="leave" style="cursor:pointer"><small>2026년 퇴사자</small><b id="kpiLeave">-</b><span id="kpiLeaveSub">퇴사 인원</span></div><div class="kpi" data-topkpi="birthday" style="cursor:pointer"><small>생일 예정자</small><b id="kpiBirthday">-</b><span id="kpiBirthdaySub">오늘 기준 가장 가까운 생일</span></div></section>
+<section class="grid"><div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap"><div><h2>품질보증팀 인원 현황</h2><div class="sub">엑셀 데이터 기준 직원별 MBTI 및 주업무 반영</div></div></div><div class="tablewrap"><table><thead><tr><th>순번</th><th>성명</th><th>주업무</th><th>MBTI</th><th>생일</th><th>양/음</th><th>입사일</th><th>년차</th></tr></thead><tbody id="tbody"></tbody></table></div></div></section>
+<section class="bottom-grid"><div class="card"><h2>업무현황</h2><div class="sub">항목을 더블클릭하면 관련 담당자가 표시됩니다.</div><div class="typebox" id="workSummary"></div></div><div class="card"><h2>MBTI 분포</h2><div class="sub">동일 MBTI 인원 수 비교</div><div class="typebox" id="typeSummary" style="margin-top:16px"></div></div></section>
+<section class="cards" id="personCards" style="display:none"></section>
+
+<!-- 휴가 잔여일 관리 섹션 -->
+<section class="vac-section">
+  <div class="card">
+    <div class="vac-header">
+      <div>
+        <h2 style="margin:0 0 4px;font-size:24px">직원별 휴가 잔여일 관리</h2>
+        <div class="sub" style="margin:0">연차 기준 사용/잔여 현황을 확인하고 휴가 이력을 등록합니다.</div>
+      </div>
+      
+    </div>
+    <div class="vac-kpis" id="vacKpis"></div>
+    <div class="vac-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>성명</th><th>주업무</th><th>기본연차</th><th>보상휴가</th><th>총 연차</th><th>사용</th><th>잔여</th>
+            <th style="min-width:130px">소진율</th><th>상태</th>
+          </tr>
+        </thead>
+        <tbody id="vacTbody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- 데이터 관리 팝업 -->
+<div id="dataMgrPopup" class="popup">
+  <div class="popup-box" style="width:min(700px,100%);max-height:90vh;overflow-y:auto">
+    <div class="popup-head" style="position:sticky;top:0;background:#fff;z-index:10;padding-bottom:12px;border-bottom:1px solid var(--line)">
+      <h3 id="dataMgrTitle">⚙️ 데이터 관리</h3>
+      <button class="xbtn" id="closeDataMgr" type="button">닫기</button>
+    </div>
+
+    <!-- 탭 -->
+    <div style="display:flex;gap:8px;margin:16px 0 0;flex-wrap:wrap">
+      <button class="dmgr-tab active" data-tab="emp" style="border:0;border-radius:12px;padding:9px 18px;font-weight:900;font-size:14px;cursor:pointer;background:#2563eb;color:#fff">👤 직원 정보</button>
+      <button class="dmgr-tab" data-tab="vac" style="border:0;border-radius:12px;padding:9px 18px;font-weight:900;font-size:14px;cursor:pointer;background:#f1f5f9;color:#475569">🏖️ 연차 설정</button>
+      <button class="dmgr-tab" data-tab="log" style="border:0;border-radius:12px;padding:9px 18px;font-weight:900;font-size:14px;cursor:pointer;background:#f1f5f9;color:#475569">📋 휴가 등록</button>
+      <button class="dmgr-tab" data-tab="ot" style="border:0;border-radius:12px;padding:9px 18px;font-weight:900;font-size:14px;cursor:pointer;background:#f1f5f9;color:#475569">⏰ 보상 휴가</button>
+      <button class="dmgr-tab" data-tab="leave" style="border:0;border-radius:12px;padding:9px 18px;font-weight:900;font-size:14px;cursor:pointer;background:#f1f5f9;color:#475569">🚪 퇴사자</button>
+    </div>
+
+    <!-- 탭: 직원 정보 -->
+    <div id="dmgr-emp" class="dmgr-panel" style="margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <span style="font-size:13px;color:var(--muted);font-weight:700">직원을 선택하거나 신규 추가하세요.</span>
+        <button id="dmgrAddNew" type="button" style="border:0;border-radius:10px;background:#2563eb;color:#fff;font-weight:900;padding:8px 14px;cursor:pointer;font-size:13px">+ 신규 추가</button>
+      </div>
+      <!-- 직원 목록 -->
+      <div id="dmgrEmpList" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:16px"></div>
+      <!-- 직원 입력 폼 -->
+      <div id="dmgrEmpForm" style="display:none;background:#f8fafc;border-radius:16px;padding:18px;border:1px solid var(--line)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <b id="dmgrEmpFormTitle" style="font-size:16px">직원 정보 입력</b>
+          <button id="dmgrDelEmp" type="button" style="display:none;border:0;border-radius:10px;background:#fef2f2;color:#dc2626;font-weight:900;padding:7px 12px;cursor:pointer;font-size:13px">🗑 삭제</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">성명 *</label>
+            <input id="dmEmpName" placeholder="홍길동" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box"></div>
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">주업무 *</label>
+            <input id="dmEmpJob" placeholder="검사(1공장)" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box"></div>
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">MBTI</label>
+            <select id="dmEmpMbti" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box">
+              <option value="-">없음</option>
+              <option>INTJ</option><option>INFP</option><option>ISFP</option><option>ENFP</option>
+              <option>ISTP</option><option>INTP</option><option>ESTJ</option><option>ESFJ</option>
+              <option>ENTJ</option><option>ENTP</option><option>INFJ</option><option>ENFJ</option>
+              <option>ISTJ</option><option>ISFJ</option><option>ESTP</option><option>ESFP</option>
+            </select></div>
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">생일</label>
+            <input id="dmEmpBirthday" placeholder="예: 7월 1일" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box"></div>
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">양/음력</label>
+            <select id="dmEmpSolar" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box">
+              <option value="-">없음</option><option>양</option><option>음</option>
+            </select></div>
+          <div><label style="font-size:12px;font-weight:800;color:var(--muted);display:block;margin-bottom:4px">입사일</label>
+            <input id="dmEmpJoin" placeholder="예: 26.03.01" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827;box-sizing:border-box"></div>
+        </div>
+        <input type="hidden" id="dmEmpIndex" value="">
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <button id="dmgrSaveEmp" type="button" style="flex:1;border:0;border-radius:12px;background:#2563eb;color:#fff;font-weight:900;padding:12px;cursor:pointer">저장</button>
+          <button id="dmgrCancelEmp" type="button" style="border:0;border-radius:12px;background:#f1f5f9;color:#475569;font-weight:900;padding:12px 18px;cursor:pointer">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 탭: 연차 설정 -->
+    <div id="dmgr-vac" class="dmgr-panel" style="display:none;margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <p style="font-size:13px;color:var(--muted);margin:0;font-weight:700">직원별 기본 연차 일수를 입력 후 전체 저장하세요.</p>
+        <button id="dmgrVacSaveAll" type="button" style="border:0;border-radius:12px;background:#2563eb;color:#fff;font-weight:900;padding:10px 20px;cursor:pointer;font-size:14px">💾 전체 저장</button>
+      </div>
+      <div id="dmgrVacList" style="display:flex;flex-direction:column;gap:8px"></div>
+    </div>
+
+    <!-- 탭: 휴가 이력 -->
+    <div id="dmgr-log" class="dmgr-panel" style="display:none;margin-top:16px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+        <select id="dmgrLogEmpSel" style="border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:14px;color:#111827;font-weight:700">
+          <option value="">직원 선택</option>
+        </select>
+        <span style="font-size:13px;color:var(--muted)" id="dmgrLogRemain"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+        <input id="dmgrLogDate" type="date" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <select id="dmgrLogDays" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+          <option value="0.125">1시간 (0.125일)</option>
+          <option value="0.25">2시간 (0.25일)</option>
+          <option value="0.375">3시간 (0.375일)</option>
+          <option value="0.5">4시간 (0.5일)</option>
+          <option value="0.625">5시간 (0.625일)</option>
+          <option value="0.75">6시간 (0.75일)</option>
+          <option value="0.875">7시간 (0.875일)</option>
+          <option value="1" selected>8시간 (1일)</option>
+        </select>
+        <input id="dmgrLogNote" placeholder="메모" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <button id="dmgrLogAdd" type="button" style="border:0;border-radius:10px;background:#22c55e;color:#fff;font-weight:900;cursor:pointer">추가</button>
+      </div>
+      <ul id="dmgrLogList" style="list-style:none;margin:0;padding:0"></ul>
+    </div>
+
+    <!-- 탭: 퇴사자 -->
+    <div id="dmgr-leave" class="dmgr-panel" style="display:none;margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <p style="font-size:13px;color:var(--muted);margin:0;font-weight:700">퇴사자를 등록합니다.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+        <input id="leaveEmpName" placeholder="성명" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <input id="leaveDate" type="date" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <input id="leaveNote" placeholder="사유" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <button id="leaveAdd" type="button" style="border:0;border-radius:10px;background:#dc2626;color:#fff;font-weight:900;cursor:pointer;font-size:13px">등록</button>
+      </div>
+      <ul id="leaveList" style="list-style:none;margin:0;padding:0"></ul>
+    </div>
+
+    <!-- 탭: 보상휴가 -->
+    <div id="dmgr-ot" class="dmgr-panel" style="display:none;margin-top:16px">
+      <div style="background:#f5f3ff;border-radius:12px;padding:11px 14px;margin-bottom:14px;font-size:13px;color:#6d28d9;font-weight:700">
+        💡 주말·공휴일 특근 시 대체휴가를 등록합니다. (8시간 = 1일, 1시간 단위 선택 가능)
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+        <select id="dmgrOtEmpSel" style="border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:14px;color:#111827;font-weight:700">
+          <option value="">직원 선택</option>
+        </select>
+        <span style="font-size:13px;color:#7c3aed;font-weight:800" id="dmgrOtSummary"></span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+        <input id="dmgrOtDate" type="date" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <select id="dmgrOtHours" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+          <option value="1">1시간 (0.125일)</option>
+          <option value="2">2시간 (0.25일)</option>
+          <option value="3">3시간 (0.375일)</option>
+          <option value="4">4시간 (0.5일)</option>
+          <option value="5">5시간 (0.625일)</option>
+          <option value="6">6시간 (0.75일)</option>
+          <option value="7">7시간 (0.875일)</option>
+          <option value="8" selected>8시간 (1일)</option>
+        </select>
+        <input id="dmgrOtNote" placeholder="메모 (예: 월말재고)" style="border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:14px;color:#111827">
+        <button id="dmgrOtAdd" type="button" style="border:0;border-radius:10px;background:#7c3aed;color:#fff;font-weight:900;cursor:pointer">적립</button>
+      </div>
+      <ul id="dmgrOtList" style="list-style:none;margin:0;padding:0"></ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">PDM Dashboard Style · Employee Management</div>
+
+
+
+</main>
+<div id="popup" class="popup"><div class="popup-box"><div class="popup-head"><h3 id="popupTitle">담당자</h3><button class="xbtn" id="closePopup">닫기</button></div><ul id="popupList" class="popup-list" style="list-style:none;padding:0"></ul></div></div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+var defaultEmployees=[
+{no:1,name:'박혁',job:'총괄',mbti:'INTJ',birthday:'12월 13일',solar:'양',join:'02.11.01'},
+{no:2,name:'민근후',job:'AS',mbti:'INFP',birthday:'3월 10일',solar:'양',join:'15.10.01'},
+{no:3,name:'김기원',job:'검사(수출)',mbti:'ISFP',birthday:'11월 23일',solar:'양',join:'19.11.01'},
+{no:4,name:'백남수',job:'KS 인증 및 자동화 개선',mbti:'ENFP',birthday:'3월 3일',solar:'양',join:'22.11.28'},
+{no:5,name:'정일성',job:'검사(1공장)',mbti:'ISTP',birthday:'6월 6일',solar:'양',join:'23.02.01'},
+{no:6,name:'배훈기',job:'검사(2공장/외주입고)',mbti:'INFP',birthday:'2월 6일',solar:'양',join:'25.07.14'},
+{no:7,name:'박태현',job:'KS 인증 및 데이터 관리',mbti:'INFP',birthday:'4월 21일',solar:'양',join:'25.08.08'},
+{no:8,name:'박동현',job:'시험 및 검사(인수)',mbti:'INTP',birthday:'5월 9일',solar:'양',join:'26.02.05'}
+];
+var saved=localStorage.getItem('qaEmployees');
+var savedParsed=saved?JSON.parse(saved):null;
+var employees=(savedParsed&&savedParsed.length>=8)?savedParsed:defaultEmployees.slice();
+defaultEmployees.forEach(function(d){
+  var idx=employees.findIndex(function(e){return e.name===d.name;});
+  if(idx<0){employees.push(d);}
+});
+localStorage.setItem('qaEmployees',JSON.stringify(employees));
+function saveEmployees(){localStorage.setItem('qaEmployees',JSON.stringify(employees));}
+window.addEventListener('beforeunload',function(){saveEmployees();});
+var desc={
+  INTJ:'전략적 사고 · 독립적 업무 · 장기계획 탁월',
+  INFP:'공감 능력 · 가치 중심 · 조화로운 협업',
+  ISFP:'유연한 대응 · 현장 감각 · 세심한 실행',
+  ENFP:'아이디어 발산 · 소통 · 새로운 시도 선호',
+  ISTP:'논리적 문제해결 · 도구/기술 능숙 · 즉각 대응',
+  INTP:'심층 분석 · 탐구 · 복잡한 문제 해결',
+  ESTJ:'체계적 관리 · 규칙 준수 · 실행력 강함',
+  ESFJ:'팀 화합 · 배려 · 꼼꼼한 지원 업무',
+  ENTJ:'리더십 · 목표 달성 · 효율 중심 추진',
+  ENTP:'창의적 전략 · 토론 · 혁신적 접근',
+  INFJ:'통찰력 · 장기 비전 · 신중한 의사결정',
+  ENFJ:'팀 동기부여 · 커뮤니케이션 · 협력 주도',
+  ISTJ:'책임감 · 정확한 업무처리 · 규정 준수',
+  ISFJ:'성실한 지원 · 세부사항 주의 · 안정적 수행',
+  ESTP:'빠른 판단 · 현장 대응 · 실용적 해결',
+  ESFP:'활발한 소통 · 팀 분위기 향상 · 즉흥적 대응'
+};
+function joinDate(text){if(!text||text==='-') return null;var p=String(text).trim().split('.');var yy=Number(p[0]);var year=yy>=70?1900+yy:2000+yy;return new Date(year,Number(p[1])-1,Number(p[2]));}
+function formatJoin(text){if(!text||text==='-') return '-';var d=joinDate(text);if(!d) return text;return String(d.getFullYear()).slice(2)+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일';}
+function tenure(text){
+if(!text||text==='-') return '-';
+var start=joinDate(text);
+if(!start) return '-';
+var today=new Date();
+
+var years=today.getFullYear()-start.getFullYear();
+var months=today.getMonth()-start.getMonth();
+
+if(today.getDate()<start.getDate()){
+  months--;
+}
+
+if(months<0){
+  years--;
+  months+=12;
+}
+
+if(years<0) years=0;
+if(months<0) months=0;
+
+return years+'년 '+months+'개월';
+}
+function birthdayObj(text){var s=String(text).replaceAll(' ','').replace('일','');var p=s.split('월');return{month:Number(p[0]),day:Number(p[1])};}
+function counts(list){return list.reduce(function(a,e){a[e.mbti]=(a[e.mbti]||0)+1;return a;},{});}
+function nextBirthday(){if(!employees.length) return null;var now=new Date();var best=null;employees.forEach(function(e){if(!e.birthday||e.birthday==='-') return;var b=birthdayObj(e.birthday);if(!b.month||!b.day) return;var d=new Date(now.getFullYear(),b.month-1,b.day);if(d<new Date(now.getFullYear(),now.getMonth(),now.getDate()))d.setFullYear(now.getFullYear()+1);var diff=d-now;if(!best||diff<best.diff)best={emp:e,diff:diff};});return best?best.emp:null;}
+function getWorkCategories(){
+  // 주업무에서 키워드 추출: 괄호 앞 또는 전체를 카테고리로
+  var catMap={};
+  employees.forEach(function(e){
+    // 키워드 추출: 첫 단어(괄호/공백 전)
+    var key=e.job.replace(/\(.*\)/,'').replace(/및.*/,'').replace(/\s+/g,' ').trim();
+    // 2글자 이상만
+    if(!key||key.length<2) key=e.job;
+    if(!catMap[key]) catMap[key]=[];
+    catMap[key].push(e);
+  });
+  return catMap;
+}
+function workList(type){
+  var cats=getWorkCategories();
+  return cats[type]||[];
+}
+function showPopup(type){var list=workList(type);var title=type==='KS'?'인증/개선':type;document.getElementById('popupTitle').textContent=title+' 담당자';document.getElementById('popupList').innerHTML=list.map(function(e){return '<li><b>'+e.name+'</b><span>'+e.job+'</span><span style="display:block;font-size:12px;color:#6366f1;margin-top:2px">'+(desc[e.mbti]||e.mbti)+'</span></li>';}).join('')||'<li>담당자가 없습니다.</li>';document.getElementById('popup').classList.add('show');}
+function closePopup(){document.getElementById('popup').classList.remove('show');}
+function updateKpi(){
+  var t=document.getElementById('kpiTotal');if(t)t.textContent=employees.length;
+  var p=document.getElementById('totalPill');if(p)p.textContent='총원 '+employees.length+'명';
+  // 2026년 입사자
+  var joinCount=employees.filter(function(e){var d=joinDate(e.join);return d&&d.getFullYear()===2026;}).length;
+  var jEl=document.getElementById('kpiJoin');if(jEl)jEl.textContent=joinCount;
+  var jSub=document.getElementById('kpiJoinSub');if(jSub)jSub.textContent=joinCount+'명 신규 입사';
+  // 2026년 퇴사자 (localStorage 기반)
+  var leaveData=JSON.parse(localStorage.getItem('qaLeave')||'[]');
+  var leaveCount=leaveData.filter(function(l){return l.year===2026;}).length;
+  var lEl=document.getElementById('kpiLeave');if(lEl)lEl.textContent=leaveCount;
+  var lSub=document.getElementById('kpiLeaveSub');if(lSub)lSub.textContent=leaveCount?leaveCount+'명 퇴사':'퇴사 인원 없음';
+  // 생일 예정자 (30일 이내)
+  var now=new Date();var soon=[];
+  employees.forEach(function(e){
+    if(!e.birthday||e.birthday==='-') return;
+    var b=birthdayObj(e.birthday);if(!b.month||!b.day) return;
+    var d=new Date(now.getFullYear(),b.month-1,b.day);
+    if(d<new Date(now.getFullYear(),now.getMonth(),now.getDate())) d.setFullYear(now.getFullYear()+1);
+    var diff=Math.ceil((d-now)/(1000*60*60*24));
+    if(diff<=30) soon.push({emp:e,diff:diff});
+  });
+  soon.sort(function(a,b){return a.diff-b.diff;});
+  var bEl=document.getElementById('kpiBirthday');
+  var bSub=document.getElementById('kpiBirthdaySub');
+  if(soon.length){
+    if(bEl) bEl.textContent=soon[0].emp.name;
+    if(bSub) bSub.textContent=soon[0].emp.birthday+' ('+soon[0].diff+'일 후)';
+  } else {
+    var nb=nextBirthday();
+    if(nb){if(bEl)bEl.textContent=nb.name;if(bSub)bSub.textContent=nb.birthday+' · '+nb.mbti;}
+    else{if(bEl)bEl.textContent='-';if(bSub)bSub.textContent='등록된 생일 없음';}
+  }
+
+  // 상단 KPI 더블클릭 팝업
+  document.querySelectorAll('[data-topkpi]').forEach(function(el){
+    el.ondblclick=function(){
+      var type=el.getAttribute('data-topkpi');
+      var title='', items=[];
+      if(type==='total'){
+        title='👥 전체 인원 ('+employees.length+'명)';
+        items=employees.map(function(e){
+          return '<li><b>'+e.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:2px">'+e.job+' · 입사 '+formatJoin(e.join)+' · '+tenure(e.join)+'</span></li>';
+        });
+        if(!items.length) items=['<li>등록된 직원이 없습니다.</li>'];
+      } else if(type==='join'){
+        title='🆕 2026년 입사자';
+        var joinList=employees.filter(function(e){var d=joinDate(e.join);return d&&d.getFullYear()===2026;});
+        items=joinList.map(function(e){
+          return '<li><b>'+e.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:2px">'+e.job+' · 입사 '+formatJoin(e.join)+'</span></li>';
+        });
+        if(!items.length) items=['<li>2026년 입사자가 없습니다.</li>'];
+      } else if(type==='leave'){
+        title='🚪 2026년 퇴사자';
+        var leaveData=JSON.parse(localStorage.getItem('qaLeave')||'[]');
+        var leaveList=leaveData.filter(function(l){return l.year===2026;}).sort(function(a,b){if(a.date!==b.date)return a.date<b.date?-1:1;return a.name<b.name?-1:1;});
+        items=leaveList.map(function(l){
+          return '<li><b style="color:#dc2626">'+l.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:2px">'+l.date+' · '+l.note+'</span></li>';
+        });
+        if(!items.length) items=['<li>2026년 퇴사자가 없습니다.</li>'];
+      } else if(type==='birthday'){
+        title='🎂 생일 예정자 (30일 이내)';
+        var now2=new Date();
+        var soonList=[];
+        employees.forEach(function(e){
+          if(!e.birthday||e.birthday==='-') return;
+          var b=birthdayObj(e.birthday); if(!b.month||!b.day) return;
+          var d=new Date(now2.getFullYear(),b.month-1,b.day);
+          if(d<new Date(now2.getFullYear(),now2.getMonth(),now2.getDate())) d.setFullYear(now2.getFullYear()+1);
+          var diff=Math.ceil((d-now2)/(1000*60*60*24));
+          if(diff<=30) soonList.push({emp:e,diff:diff,date:(b.month+'월 '+b.day+'일')});
+        });
+        soonList.sort(function(a,b){return a.diff-b.diff;});
+        items=soonList.map(function(s){
+          return '<li><b>'+s.emp.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:2px">'+s.date+' · '+s.diff+'일 후 · '+s.emp.job+'</span></li>';
+        });
+        if(!items.length) items=['<li>30일 이내 생일 예정자가 없습니다.</li>'];
+      }
+      document.getElementById('popupTitle').textContent=title;
+      document.getElementById('popupList').innerHTML=items.join('');
+      document.getElementById('popup').classList.add('show');
+    };
+  });
+}
+function render(){employees.forEach(function(e,i){e.no=i+1;});updateKpi();var tbody=document.getElementById('tbody');tbody.innerHTML=employees.map(function(e,idx){return '<tr><td>'+e.no+'</td><td><b>'+e.name+'</b></td><td>'+e.job+'</td><td><span class="mbti">'+e.mbti+'</span></td><td>'+e.birthday+'</td><td><span class="solar">'+e.solar+'</span></td><td>'+formatJoin(e.join)+'</td><td><b>'+tenure(e.join)+'</b></td></tr>';}).join('');document.getElementById('personCards').innerHTML=employees.map(function(e){return '<article class="person"><div class="avatar">'+e.name.slice(0,1)+'</div><h3>'+e.name+'</h3><p>'+e.job+'</p><p><b class="mbti">'+e.mbti+'</b></p><p>'+(desc[e.mbti]||'')+'</p><div class="tagrow"><span class="tag">🎂 '+e.birthday+'</span><span class="tag">🏢 '+e.join+'</span><span class="tag">📌 '+tenure(e.join)+'</span></div></article>';}).join('');var c=counts(employees);
+if(c['-']) delete c['-'];document.getElementById('typeSummary').innerHTML=Object.entries(c).sort(function(a,b){return b[1]-a[1];}).map(function(x){return '<div class="type" data-mbti="'+x[0]+'"><small>'+x[0]+'</small><b>'+x[1]+'명</b></div>';}).join('');
+// 업무현황 동적 렌더링
+var cats=getWorkCategories();
+document.getElementById('workSummary').innerHTML=Object.entries(cats).sort(function(a,b){return b[1].length-a[1].length;}).map(function(x){return '<div class="type" data-work="'+x[0]+'"><small>'+x[0]+'</small><b>'+x[1].length+'명</b></div>';}).join('');
+Array.from(document.querySelectorAll('[data-work]')).forEach(function(el){el.addEventListener('dblclick',function(){
+  var type=el.getAttribute('data-work');
+  var list=workList(type);
+  document.getElementById('popupTitle').textContent=type+' 담당자';
+  document.getElementById('popupList').innerHTML=list.map(function(e){return '<li><b>'+e.name+'</b><span>'+e.job+'</span><span style="display:block;font-size:12px;color:#6366f1;margin-top:2px">'+(desc[e.mbti]||e.mbti)+'</span></li>';}).join('')||'<li>담당자가 없습니다.</li>';
+  document.getElementById('popup').classList.add('show');
+});});
+Array.from(document.querySelectorAll('[data-mbti]')).forEach(function(el){
+el.addEventListener('dblclick',function(){
+var mbti=el.getAttribute('data-mbti');
+var list=employees.filter(function(e){return e.mbti===mbti;});
+document.getElementById('popupTitle').textContent=mbti+' 담당자';
+document.getElementById('popupList').innerHTML=list.map(function(e){return '<li><b>'+e.name+'</b><span>'+e.job+'</span><span style="display:block;font-size:12px;color:#6366f1;margin-top:2px">'+(desc[e.mbti]||e.mbti)+'</span></li>';}).join('');
+document.getElementById('popup').classList.add('show');
+});
+});}
+document.getElementById('closePopup').addEventListener('click',closePopup);document.getElementById('popup').addEventListener('click',function(e){if(e.target.id==='popup')closePopup();});
+
+render();
+
+/* ===== 휴가 관리 ===== */
+(function(){
+  var VAC_KEY='qaVacation_v2';
+  var vacData=JSON.parse(localStorage.getItem(VAC_KEY)||'{}');
+  // vacData 구조: { 이름: { total:15, logs:[{date,days,note}] } }
+
+  var logTargetName='';
+  var otTargetName='';
+
+  function saveVac(){localStorage.setItem(VAC_KEY,JSON.stringify(vacData));}
+
+  function usedDays(name){
+    var d=vacData[name];
+    if(!d||!d.logs) return 0;
+    return d.logs.reduce(function(s,l){return s+Number(l.days);},0);
+  }
+
+  function barColor(pct){
+    if(pct>=90) return '#ef4444';
+    if(pct>=70) return '#f59e0b';
+    return '#22c55e';
+  }
+  function badgeClass(pct){
+    if(pct>=90) return 'vac-used-tag badge-red';
+    if(pct>=70) return 'vac-used-tag badge-yellow';
+    return 'vac-used-tag badge-green';
+  }
+
+  function overtimeDays(name){
+    var d=vacData[name];
+    if(!d||!d.overtime) return 0;
+    return d.overtime.reduce(function(s,o){return s+Number(o.earned);},0);
+  }
+
+  function renderVacTable(){
+    var tbody=document.getElementById('vacTbody');
+    tbody.innerHTML=employees.map(function(e){
+      var d=vacData[e.name]||{total:0,logs:[],overtime:[]};
+      var base=Number(d.total)||0;
+      var ot=overtimeDays(e.name);
+      var total=base+ot;
+      var used=usedDays(e.name);
+      var remain=Math.max(0,total-used);
+      var pct=total>0?Math.round(used/total*100):0;
+      var bc=barColor(pct);
+      return '<tr>'+
+        '<td><b>'+e.name+'</b></td>'+
+        '<td>'+e.job+'</td>'+
+        '<td style="text-align:center;color:#111827;font-weight:800">'+base+'일</td>'+
+        '<td class="vac-detail-td" data-name="'+e.name+'" data-type="ot" style="text-align:center;color:#22c55e;font-weight:800;cursor:pointer" title="더블클릭 시 이력 확인">+'+ot+'일</td>'+
+        '<td style="text-align:center;color:#111827;font-weight:800">'+total+'일</td>'+
+        '<td class="vac-detail-td" data-name="'+e.name+'" data-type="used" style="text-align:center;color:#7c3aed;font-weight:800;cursor:pointer" title="더블클릭 시 이력 확인">'+used+'일</td>'+
+        '<td class="vac-detail-td" data-name="'+e.name+'" data-type="remain" style="text-align:center;color:#2563eb;font-weight:800;cursor:pointer" title="더블클릭 시 이력 확인">'+remain+'일</td>'+
+        '<td><div style="display:flex;align-items:center;gap:8px"><div class="vac-bar-wrap" style="flex:1"><div class="vac-bar" style="width:'+pct+'%;background:'+bc+'"></div></div><span style="font-size:12px;font-weight:800;color:'+bc+'">'+pct+'%</span></div></td>'+
+        '<td><span class="'+badgeClass(pct)+'">'+(pct>=90?'⚠️ 주의':pct>=70?'📋 관리':'✅ 정상')+'</span></td>'+
+
+      '</tr>';
+    }).join('');
+
+    // 이력 버튼
+    Array.from(document.querySelectorAll('.vac-log-btn')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        logTargetName=btn.getAttribute('data-name');
+        document.getElementById('vacLogTitle').textContent=logTargetName+' 휴가 이력';
+        renderLogList();
+        document.getElementById('vacLogPopup').classList.add('show');
+      });
+    });
+    // 특근 버튼
+    Array.from(document.querySelectorAll('.vac-ot-btn')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        otTargetName=btn.getAttribute('data-name');
+        document.getElementById('vacOtTitle').textContent=otTargetName+' 특근 이력';
+        renderOtList();
+        document.getElementById('vacOtPopup').classList.add('show');
+      });
+    });
+    // 수정 버튼
+    Array.from(document.querySelectorAll('.vac-del-btn')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var name=btn.getAttribute('data-name');
+        var d=vacData[name]||{total:0,logs:[]};
+        var sel=document.getElementById('vacEmpSelect');
+        sel.value=name;
+        document.getElementById('vacTotal').value=d.total||0;
+        document.getElementById('vacEditName').value=name;
+        document.getElementById('vacAddPopupTitle').textContent='휴가 정보 수정 · '+name;
+        document.getElementById('vacAddPopup').classList.add('show');
+      });
+    });
+
+    renderVacKpis();
+
+    // 보상휴가/사용/잔여 더블클릭 → 세부 팝업
+    Array.from(document.querySelectorAll('.vac-detail-td')).forEach(function(td){
+      td.addEventListener('dblclick',function(){
+        var name=td.getAttribute('data-name');
+        var type=td.getAttribute('data-type');
+        var d=vacData[name]||{total:0,logs:[],overtime:[]};
+        var title='', items=[];
+
+        if(type==='ot'){
+          title='⏰ '+name+' · 보상휴가 이력';
+          var ots=(d.overtime||[]).slice().sort(function(a,b){return a.date<b.date?-1:1;});
+          if(!ots.length){ items=['<li style="color:var(--muted);font-size:14px">등록된 보상휴가가 없습니다.</li>']; }
+          else {
+            items=ots.map(function(o){
+              return '<li><span style="font-size:13px">'+o.date+' · '+o.note+' · <b style="color:#22c55e">+'+o.earned+'일 보상</b></span></li>';
+            });
+            var total=ots.reduce(function(s,o){return s+Number(o.earned);},0);
+            items.push('<li style="border-top:1px solid var(--line);margin-top:4px;padding-top:8px;font-size:13px">합계 <b style="color:#059669">+'+total+'일</b></li>');
+          }
+        } else if(type==='used'){
+          title=''+name+' · 휴가 사용 이력';
+          var logs=(d.logs||[]).slice().sort(function(a,b){return a.date<b.date?-1:1;});
+          if(!logs.length){ items=['<li style="color:var(--muted);font-size:14px">사용 이력이 없습니다.</li>']; }
+          else {
+            items=logs.map(function(l){
+              return '<li><span style="font-size:13px">'+l.date+' · '+l.note+' · <b style="color:#7c3aed">'+l.days+'일</b></span></li>';
+            });
+            var usedSum=logs.reduce(function(s,l){return s+Number(l.days);},0);
+            items.push('<li style="border-top:1px solid var(--line);margin-top:4px;padding-top:8px;font-size:13px">합계 <b style="color:#7c3aed">'+usedSum+'일</b></li>');
+          }
+        } else if(type==='remain'){
+          title='📋 '+name+' · 잔여 현황';
+          var base=Number(d.total)||0;
+          var otSum=(d.overtime||[]).reduce(function(s,o){return s+Number(o.earned);},0);
+          var usedSum2=(d.logs||[]).reduce(function(s,l){return s+Number(l.days);},0);
+          var remain=Math.max(0,base+otSum-usedSum2);
+          items=[
+            '<li style="font-size:13px">기본 연차 <b>'+base+'일</b></li>',
+            '<li style="font-size:13px">보상휴가 <b style="color:#059669">+'+otSum+'일</b></li>',
+            '<li style="font-size:13px">사용 <b style="color:#7c3aed">-'+usedSum2+'일</b></li>',
+            '<li style="border-top:1px solid var(--line);margin-top:4px;padding-top:8px;font-size:13px">잔여 <b style="color:#2563eb">'+remain+'일</b></li>'
+          ];
+        }
+        document.getElementById('popupTitle').textContent=title;
+        document.getElementById('popupList').innerHTML=items.join('');
+        document.getElementById('popup').classList.add('show');
+      });
+    });
+  }
+
+  function renderVacKpis(){
+    var now=new Date();
+    var thisYear=now.getFullYear();
+    var thisMonth=now.getMonth()+1;
+
+    // 주의 인원: 소진율 90% 이상
+    var warn=employees.filter(function(e){
+      var d=vacData[e.name]||{total:0};
+      var t=(Number(d.total)||0)+(overtimeDays(e.name)||0);
+      var u=usedDays(e.name);
+      return t>0 && u/t>=0.9;
+    }).length;
+
+    // 이번달 휴가 인원: 이번달에 휴가 사용 이력이 있는 직원 수
+    var thisMonthVac=employees.filter(function(e){
+      var d=vacData[e.name];
+      if(!d||!d.logs) return false;
+      return d.logs.some(function(l){
+        var dt=new Date(l.date);
+        return dt.getFullYear()===thisYear && dt.getMonth()+1===thisMonth;
+      });
+    }).length;
+
+    // 이번달 보상 인원: 이번달에 보상휴가 등록이 있는 직원 수
+    var thisMonthOt=employees.filter(function(e){
+      var d=vacData[e.name];
+      if(!d||!d.overtime) return false;
+      return d.overtime.some(function(o){
+        var dt=new Date(o.date);
+        return dt.getFullYear()===thisYear && dt.getMonth()+1===thisMonth;
+      });
+    }).length;
+
+    // 휴가 예정 인원: 오늘 이후 날짜에 휴가 이력이 있는 직원 수
+    var today=now.toISOString().slice(0,10);
+    var upcoming=employees.filter(function(e){
+      var d=vacData[e.name];
+      if(!d||!d.logs) return false;
+      return d.logs.some(function(l){ return l.date>today; });
+    }).length;
+
+    document.getElementById('vacKpis').innerHTML=
+      '<div class="vac-kpi" data-kpi="warn" style="cursor:pointer"><small>주의 인원</small><b style="color:#dc2626">'+warn+'명</b><span>소진율 90% 이상</span></div>'+
+      '<div class="vac-kpi" data-kpi="monthot" style="cursor:pointer"><small>이번달 보상 인원</small><b style="color:#22c55e">'+thisMonthOt+'명</b><span>'+thisMonth+'월 보상휴가 등록자</span></div>'+
+      '<div class="vac-kpi" data-kpi="monthvac" style="cursor:pointer"><small>이번달 휴가 인원</small><b style="color:#7c3aed">'+thisMonthVac+'명</b><span>'+thisMonth+'월 휴가 사용자</span></div>'+
+      '<div class="vac-kpi" data-kpi="upcoming" style="cursor:pointer"><small>휴가 예정 인원</small><b style="color:#2563eb">'+upcoming+'명</b><span>향후 휴가 예정자</span></div>';
+
+    // 더블클릭 팝업
+    var now2=new Date(); var ty2=now2.getFullYear(); var tm2=now2.getMonth()+1; var today2=now2.toISOString().slice(0,10);
+    document.querySelectorAll('[data-kpi]').forEach(function(el){
+      el.addEventListener('dblclick',function(){
+        var kpi=el.getAttribute('data-kpi');
+        var list=[], title='';
+        if(kpi==='warn'){
+          title='⚠️ 주의 인원 (소진율 90% 이상)';
+          list=employees.filter(function(e){
+            var d=vacData[e.name]||{total:0};
+            var t=(Number(d.total)||0)+(overtimeDays(e.name)||0);
+            var u=usedDays(e.name);
+            return t>0 && u/t>=0.9;
+          }).map(function(e){
+            var d=vacData[e.name]||{total:0,logs:[]};
+            var t=(Number(d.total)||0)+(overtimeDays(e.name)||0);
+            var u=usedDays(e.name);
+            var pct=t>0?Math.round(u/t*100):0;
+            var remain=Math.max(0,t-u);
+            return '<li><b>'+e.name+'</b>'+
+              '<span style="display:block;font-size:12px;color:var(--muted);margin-top:3px">'+
+              '총 '+t+'일 · 사용 <b style="color:#7c3aed">'+u+'일</b> · 잔여 <b style="color:#2563eb">'+remain+'일</b> · <b style="color:#dc2626">'+pct+'%</b></span></li>';
+          });
+        } else if(kpi==='monthvac'){
+          title=''+tm2+'월 휴가 사용자';
+          var allLogs=[];
+          employees.forEach(function(e){
+            var d=vacData[e.name];
+            if(!d||!d.logs) return;
+            d.logs.filter(function(l){var dt=new Date(l.date);return dt.getFullYear()===ty2&&dt.getMonth()+1===tm2;})
+              .forEach(function(l){allLogs.push({name:e.name,date:l.date,note:l.note,days:l.days});});
+          });
+          allLogs.sort(function(a,b){if(a.date!==b.date)return a.date<b.date?-1:1;return a.name<b.name?-1:1;});
+          list=allLogs.map(function(l){
+            return '<li><b>'+l.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:3px">'+l.date+' · '+l.note+' · <b style="color:#7c3aed">'+l.days+'일</b></span></li>';
+          });
+        } else if(kpi==='monthot'){
+          title='⏰ '+tm2+'월 보상휴가 등록자';
+          var allOts=[];
+          employees.forEach(function(e){
+            var d=vacData[e.name];
+            if(!d||!d.overtime) return;
+            d.overtime.filter(function(o){var dt=new Date(o.date);return dt.getFullYear()===ty2&&dt.getMonth()+1===tm2;})
+              .forEach(function(o){allOts.push({name:e.name,date:o.date,note:o.note,earned:o.earned,hours:o.hours});});
+          });
+          allOts.sort(function(a,b){if(a.date!==b.date)return a.date<b.date?-1:1;return a.name<b.name?-1:1;});
+          list=allOts.map(function(o){
+            return '<li><b>'+o.name+'</b><span style="display:block;font-size:12px;color:var(--muted);margin-top:3px">'+o.date+' · '+o.note+' · <b style="color:#22c55e">+'+o.earned+'일 보상</b></span></li>';
+          });
+
+        } else if(kpi==='upcoming'){
+          title='📅 휴가 예정자';
+          list=employees.filter(function(e){
+            var d=vacData[e.name];
+            if(!d||!d.logs) return false;
+            return d.logs.some(function(l){return l.date>today2;});
+          }).map(function(e){
+            var d=vacData[e.name];
+            var upLogs=d.logs.filter(function(l){return l.date>today2;}).sort(function(a,b){return a.date<b.date?-1:1;});
+            var detail=upLogs.map(function(l){return '<span style="display:block;font-size:12px;color:var(--muted);margin-top:3px">'+l.date+' · '+l.note+' · <b style="color:#2563eb">'+l.days+'일</b></span>';}).join('');
+            return '<li><b>'+e.name+'</b>'+detail+'</li>';
+          });
+        }
+        document.getElementById('popupTitle').textContent=title;
+        document.getElementById('popupList').innerHTML=list.length?list.join(''):'<li>해당 인원이 없습니다.</li>';
+        document.getElementById('popup').classList.add('show');
+      });
+    });
+  }
+
+  function renderLogList(){
+    var d=vacData[logTargetName]||{total:0,logs:[]};
+    var used=usedDays(logTargetName);
+    var total=Number(d.total)||0;
+    var remain=Math.max(0,total-used);
+    var ul=document.getElementById('vacLogList');
+    if(!d.logs||d.logs.length===0){
+      ul.innerHTML='<li style="color:var(--muted);font-size:14px">등록된 이력이 없습니다.</li>';
+    } else {
+      ul.innerHTML=d.logs.map(function(l,i){
+        return '<li><div><b>'+l.date+'</b><span style="margin-left:10px;color:var(--muted);font-size:13px">'+l.note+'</span></div>'+
+          '<div style="display:flex;align-items:center;gap:8px">'+
+          '<b style="color:#7c3aed">-'+l.days+'일</b>'+
+          '<button class="vac-log-del" data-idx="'+i+'">삭제</button>'+
+          '</div></li>';
+      }).join('');
+    }
+    // 하단 요약
+    var sumEl=document.getElementById('vacLogSummary');
+    if(!sumEl){
+      var s=document.createElement('div');
+      s.id='vacLogSummary';
+      s.style.cssText='margin-top:12px;padding:12px;background:#f8fafc;border-radius:14px;font-size:14px;display:flex;justify-content:space-between';
+      document.getElementById('vacLogList').after(s);
+      sumEl=s;
+    }
+    sumEl.innerHTML='<span>총 연차 <b>'+total+'일</b></span><span style="color:#ef4444">사용 <b>'+used+'일</b></span><span style="color:#059669">잔여 <b>'+remain+'일</b></span>';
+
+    Array.from(document.querySelectorAll('.vac-log-del')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var idx=Number(btn.getAttribute('data-idx'));
+        vacData[logTargetName].logs.splice(idx,1);
+        saveVac();
+        renderLogList();
+        renderVacTable();
+      });
+    });
+  }
+
+  // 직원 선택 옵션 채우기
+  renderVacTable();
+})();
+
+updateKpi();
+
+
+/* ===== 데이터 관리 팝업 ===== */
+(function(){
+  var VAC_KEY='qaVacation_v2';
+  function getVacData(){return JSON.parse(localStorage.getItem(VAC_KEY)||'{}');}
+  function saveVacData(d){localStorage.setItem(VAC_KEY,JSON.stringify(d));}
+  function usedDays(vacData,name){var d=vacData[name];if(!d||!d.logs)return 0;return d.logs.reduce(function(s,l){return s+Number(l.days);},0);}
+
+  // 탭 전환
+  document.querySelectorAll('.dmgr-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var tab=btn.getAttribute('data-tab');
+      document.querySelectorAll('.dmgr-tab').forEach(function(b){b.style.background='#f1f5f9';b.style.color='#475569';});
+      btn.style.background='#2563eb';btn.style.color='#fff';
+      document.querySelectorAll('.dmgr-panel').forEach(function(p){p.style.display='none';});
+      document.getElementById('dmgr-'+tab).style.display='block';
+      if(tab==='emp') renderDmgrEmpList();
+      if(tab==='vac') renderDmgrVacList();
+      if(tab==='log') renderDmgrLogEmpSel();
+      if(tab==='ot') renderDmgrOtEmpSel();
+      if(tab==='leave') renderLeaveList();
+    });
+  });
+
+  // 팝업 열기/닫기
+  document.getElementById('openDataMgr').addEventListener('click',function(){
+    renderDmgrEmpList();
+    renderDmgrOtEmpSel();
+    renderLeaveList();
+    document.getElementById('dataMgrPopup').classList.add('show');
+  });
+
+  function resetDataMgr(){
+    // 탭 초기화 - 직원 정보 탭으로
+    document.querySelectorAll('.dmgr-tab').forEach(function(b){b.style.background='#f1f5f9';b.style.color='#475569';});
+    var empTab=document.querySelector('.dmgr-tab[data-tab="emp"]');
+    if(empTab){empTab.style.background='#2563eb';empTab.style.color='#fff';}
+    document.querySelectorAll('.dmgr-panel').forEach(function(p){p.style.display='none';});
+    var empPanel=document.getElementById('dmgr-emp');
+    if(empPanel) empPanel.style.display='block';
+    // 직원 폼 닫기
+    document.getElementById('dmgrEmpForm').style.display='none';
+    // 휴가 등록 탭 선택 초기화
+    var logSel=document.getElementById('dmgrLogEmpSel');
+    if(logSel){logSel.value='';document.getElementById('dmgrLogList').innerHTML='';document.getElementById('dmgrLogRemain').innerHTML='';}
+    // 보상 휴가 탭 선택 초기화
+    var otSel=document.getElementById('dmgrOtEmpSel');
+    if(otSel){otSel.value='';document.getElementById('dmgrOtList').innerHTML='';document.getElementById('dmgrOtSummary').innerHTML='';}
+    // 입력 폼 초기화 + 수정 모드 취소
+    var logDate=document.getElementById('dmgrLogDate'); if(logDate) logDate.value='';
+    var logNote=document.getElementById('dmgrLogNote'); if(logNote) logNote.value='';
+    var logDays=document.getElementById('dmgrLogDays'); if(logDays) logDays.value='1';
+    var logAddBtn=document.getElementById('dmgrLogAdd');
+    if(logAddBtn){logAddBtn.textContent='추가';logAddBtn.style.background='#22c55e';logAddBtn.removeAttribute('data-edit-idx');logAddBtn.removeAttribute('data-edit-name');}
+    var otDate=document.getElementById('dmgrOtDate'); if(otDate) otDate.value='';
+    var otNote=document.getElementById('dmgrOtNote'); if(otNote) otNote.value='';
+    var otHours=document.getElementById('dmgrOtHours'); if(otHours) otHours.value='8';
+    var otAddBtn=document.getElementById('dmgrOtAdd');
+    if(otAddBtn){otAddBtn.textContent='적립';otAddBtn.style.background='#7c3aed';otAddBtn.removeAttribute('data-edit-idx');otAddBtn.removeAttribute('data-edit-name');}
+    var leaveEmpName=document.getElementById('leaveEmpName'); if(leaveEmpName) leaveEmpName.value='';
+    var leaveDate=document.getElementById('leaveDate'); if(leaveDate) leaveDate.value='';
+    var leaveNote=document.getElementById('leaveNote'); if(leaveNote) leaveNote.value='';
+    var leaveAddBtn=document.getElementById('leaveAdd');
+    if(leaveAddBtn){leaveAddBtn.textContent='등록';leaveAddBtn.style.background='#dc2626';leaveAddBtn.removeAttribute('data-edit-idx');}
+    // 직원 목록 다시 렌더
+    renderDmgrEmpList();
+  }
+  document.getElementById('closeDataMgr').addEventListener('click',function(){
+    document.getElementById('dataMgrPopup').classList.remove('show');
+    resetDataMgr();
+  });
+  document.getElementById('dataMgrPopup').addEventListener('click',function(e){
+    if(e.target.id==='dataMgrPopup'){document.getElementById('dataMgrPopup').classList.remove('show');resetDataMgr();}
+  });
+
+  /* ── 직원 탭 ── */
+  function renderDmgrEmpList(){
+    var list=document.getElementById('dmgrEmpList');
+    list.innerHTML=employees.map(function(e,i){
+      return '<button type="button" data-idx="'+i+'" style="border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;cursor:pointer;text-align:left;transition:.15s">'+
+        '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">'+
+        '<span style="font-weight:900;font-size:15px">'+e.name+'</span>'+
+        (e.mbti&&e.mbti!=='-'?'<span style="font-size:11px;font-weight:900;color:#1d4ed8;background:#eaf2ff;border-radius:999px;padding:2px 7px">'+e.mbti+'</span>':'')+
+        '</div>'+
+        '<div style="font-size:12px;color:var(--muted)">'+e.job+'</div>'+
+        '<div style="font-size:11px;color:var(--muted);margin-top:2px">'+formatJoin(e.join)+'</div>'+
+        (e.mbti&&e.mbti!=='-'&&desc[e.mbti]?'<div style="font-size:11px;color:#6366f1;margin-top:3px">'+desc[e.mbti]+'</div>':'')+
+        '</button>';
+    }).join('');
+    Array.from(list.querySelectorAll('button')).forEach(function(btn){
+      btn.addEventListener('mouseover',function(){btn.style.background='#f0f7ff';});
+      btn.addEventListener('mouseout',function(){btn.style.background='#fff';});
+      btn.addEventListener('click',function(){openEmpForm(Number(btn.getAttribute('data-idx')));});
+    });
+    document.getElementById('dmgrEmpForm').style.display='none';
+  }
+
+  function openEmpForm(idx){
+    var form=document.getElementById('dmgrEmpForm');
+    form.style.display='block';
+    var isNew=(idx===-1);
+    document.getElementById('dmgrEmpFormTitle').textContent=isNew?'신규 직원 추가':'직원 정보 수정';
+    document.getElementById('dmEmpIndex').value=isNew?'':String(idx);
+    document.getElementById('dmgrDelEmp').style.display=isNew?'none':'block';
+    if(isNew){
+      document.getElementById('dmEmpName').value='';
+      document.getElementById('dmEmpJob').value='';
+      document.getElementById('dmEmpMbti').value='-';
+      document.getElementById('dmEmpBirthday').value='';
+      document.getElementById('dmEmpSolar').value='-';
+      document.getElementById('dmEmpJoin').value='';
+    } else {
+      var e=employees[idx];
+      document.getElementById('dmEmpName').value=e.name;
+      document.getElementById('dmEmpJob').value=e.job;
+      document.getElementById('dmEmpMbti').value=(e.mbti==='-'||!e.mbti)?'-':e.mbti;
+      document.getElementById('dmEmpBirthday').value=(e.birthday==='-'?'':e.birthday);
+      document.getElementById('dmEmpSolar').value=(e.solar==='-'||!e.solar)?'-':e.solar;
+      document.getElementById('dmEmpJoin').value=(e.join==='-'?'':e.join);
+    }
+    form.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  document.getElementById('dmgrAddNew').addEventListener('click',function(){openEmpForm(-1);});
+  document.getElementById('dmgrCancelEmp').addEventListener('click',function(){
+    document.getElementById('dmgrEmpForm').style.display='none';
+  });
+
+  document.getElementById('dmgrSaveEmp').addEventListener('click',function(){
+    var name=document.getElementById('dmEmpName').value.trim();
+    var job=document.getElementById('dmEmpJob').value.trim();
+    if(!name||!job){alert('성명과 주업무는 필수입니다.');return;}
+    var data={name:name,job:job,
+      mbti:document.getElementById('dmEmpMbti').value||'-',
+      birthday:document.getElementById('dmEmpBirthday').value.trim()||'-',
+      solar:document.getElementById('dmEmpSolar').value||'-',
+      join:document.getElementById('dmEmpJoin').value.trim()||'-'};
+    var idx=document.getElementById('dmEmpIndex').value;
+    if(idx===''){data.no=employees.length+1;employees.push(data);}
+    else{data.no=employees[Number(idx)].no;employees[Number(idx)]=data;}
+    saveEmployees();render();updateKpi();
+    document.getElementById('dmgrEmpForm').style.display='none';
+    renderDmgrEmpList();
+  });
+
+  document.getElementById('dmgrDelEmp').addEventListener('click',function(){
+    var idx=Number(document.getElementById('dmEmpIndex').value);
+    if(!confirm(employees[idx].name+' 직원을 삭제할까요?')) return;
+    employees.splice(idx,1);
+    saveEmployees();render();updateKpi();
+    document.getElementById('dmgrEmpForm').style.display='none';
+    renderDmgrEmpList();
+  });
+
+  /* ── 연차 설정 탭 ── */
+  function renderDmgrVacList(){
+    var vacData=getVacData();
+    var container=document.getElementById('dmgrVacList');
+    container.innerHTML=employees.map(function(e){
+      var d=vacData[e.name]||{total:0,logs:[],overtime:[]};
+      var used=usedDays(vacData,e.name);
+      var total=Number(d.total)||0;
+      var ot=(d.overtime||[]).reduce(function(s,o){return s+Number(o.earned);},0);
+      return '<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:#f8fafc;border-radius:12px;border:1px solid var(--line);flex-wrap:wrap">'+
+        '<div style="min-width:80px">'+
+        '<div style="font-weight:900">'+e.name+'</div>'+
+        (e.mbti&&e.mbti!=='-'&&desc[e.mbti]?'<div style="font-size:11px;color:#6366f1;margin-top:2px">'+desc[e.mbti]+'</div>':'')+
+        '</div>'+
+        '<div style="flex:1;min-width:100px">'+
+        '<div style="font-size:13px;color:var(--muted)">'+e.job+'</div>'+
+        '<div style="font-size:11px;color:var(--muted);margin-top:2px">입사 '+formatJoin(e.join)+'</div>'+
+        '</div>'+
+        '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">'+
+        '<label style="font-size:12px;font-weight:800;color:var(--muted)">기본 연차</label>'+
+        '<input type="number" min="0" max="99" value="'+(total||0)+'" data-name="'+e.name+'" '+
+        'style="width:64px;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:14px;font-weight:900;color:#111827;text-align:center">'+
+        '<span style="font-size:12px;color:#111827;font-weight:700">일</span>'+
+        '</div></div>';
+    }).join('');
+    // 전체 저장 버튼
+    var saveAllBtn=document.getElementById('dmgrVacSaveAll');
+    if(saveAllBtn){
+      saveAllBtn.onclick=function(){
+        var vd=getVacData();
+        Array.from(container.querySelectorAll('input[data-name]')).forEach(function(input){
+          var name=input.getAttribute('data-name');
+          if(!vd[name]) vd[name]={total:0,logs:[],overtime:[]};
+          vd[name].total=Number(input.value)||0;
+        });
+        saveVacData(vd);
+        saveAllBtn.textContent='✅ 저장 완료!';
+        setTimeout(function(){saveAllBtn.textContent='💾 전체 저장';},1500);
+        renderDmgrVacList();
+        document.dispatchEvent(new CustomEvent('vacUpdated'));
+      };
+    }
+  }
+
+  /* ── 휴가 이력 탭 ── */
+  function renderDmgrLogEmpSel(){
+    var sel=document.getElementById('dmgrLogEmpSel');
+    var cur=sel.value;
+    sel.innerHTML='<option value="">직원 선택</option>'+
+      employees.map(function(e){return '<option value="'+e.name+'" '+(e.name===cur?'selected':'')+'>'+e.name+'</option>';}).join('');
+    if(cur) renderDmgrLogList(cur);
+    else document.getElementById('dmgrLogList').innerHTML='';
+  }
+
+  function renderDmgrLogList(name){
+    var vacData=getVacData();
+    var d=vacData[name]||{total:0,logs:[]};
+    var used=usedDays(vacData,name);
+    var total=Number(d.total)||0;
+    var otE=(d.overtime||[]).reduce(function(s,o){return s+Number(o.earned);},0);
+    var totalWithOt=total+otE;
+    var empObj=employees.find(function(e){return e.name===name;})||{};
+    var mbtiDesc=(empObj.mbti&&empObj.mbti!=='-'&&desc[empObj.mbti])?'<span style="font-size:12px;color:#6366f1;margin-left:8px">'+desc[empObj.mbti]+'</span>':'';
+    document.getElementById('dmgrLogRemain').innerHTML=
+      '<b>'+name+'</b>'+mbtiDesc+'<br>'+
+      '기본 <b>'+total+'일</b>'+(otE>0?' + 적립 <b style="color:#22c55e">+'+otE+'일</b>':'')+
+      ' | 사용 <b style="color:#7c3aed">'+used+'일</b> | 잔여 <b style="color:#2563eb">'+Math.max(0,totalWithOt-used)+'일</b>';
+    var ul=document.getElementById('dmgrLogList');
+    if(!d.logs||d.logs.length===0){
+      ul.innerHTML='<li style="color:var(--muted);font-size:14px;padding:12px">등록된 이력이 없습니다.</li>';return;
+    }
+    var sortedLogs=(d.logs||[]).slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    ul.innerHTML=sortedLogs.map(function(l,i){
+      return '<li style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;background:#f8fafc">'+
+        '<div style="font-size:13px;color:var(--muted)">'+l.date+' · '+l.note+' · <b style="color:#7c3aed">'+l.days+'일</b></div>'+
+        '<div style="display:flex;align-items:center;gap:6px">'+
+        '<button type="button" data-idx="'+i+'" data-name="'+name+'" class="dmgr-log-edit" '+
+        'style="border:0;background:#eef4ff;color:#1d4ed8;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">수정</button>'+
+        '<button type="button" data-idx="'+i+'" data-name="'+name+'" class="dmgr-log-del" '+
+        'style="border:0;background:#fef2f2;color:#dc2626;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">삭제</button>'+
+        '</div></li>';
+    }).join('');
+    Array.from(ul.querySelectorAll('.dmgr-log-edit')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var n=btn.getAttribute('data-name');
+        var idx=Number(btn.getAttribute('data-idx'));
+        var vd=getVacData();
+        var log=vd[n].logs[idx];
+        // 입력 폼에 값 채우기
+        document.getElementById('dmgrLogDate').value=log.date;
+        document.getElementById('dmgrLogDays').value=String(log.days);
+        document.getElementById('dmgrLogNote').value=log.note==='-'?'':log.note;
+        // 추가 버튼을 수정 모드로 전환
+        var addBtn=document.getElementById('dmgrLogAdd');
+        addBtn.textContent='수정 저장';
+        addBtn.style.background='#1d4ed8';
+        addBtn.setAttribute('data-edit-idx', idx);
+        addBtn.setAttribute('data-edit-name', n);
+        document.getElementById('dmgrLogDate').focus();
+      });
+    });
+    Array.from(ul.querySelectorAll('.dmgr-log-del')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var n=btn.getAttribute('data-name');
+        var idx=Number(btn.getAttribute('data-idx'));
+        var vd=getVacData();
+        vd[n].logs.splice(idx,1);
+        saveVacData(vd);
+        // 수정 모드 취소
+        var addBtn=document.getElementById('dmgrLogAdd');
+        addBtn.textContent='추가'; addBtn.style.background='#22c55e';
+        addBtn.removeAttribute('data-edit-idx'); addBtn.removeAttribute('data-edit-name');
+        document.getElementById('dmgrLogDate').value='';
+        document.getElementById('dmgrLogDays').value='1';
+        document.getElementById('dmgrLogNote').value='';
+        renderDmgrLogList(n);
+        document.dispatchEvent(new CustomEvent('vacUpdated'));
+      });
+    });
+  }
+
+  document.getElementById('dmgrLogEmpSel').addEventListener('change',function(){renderDmgrLogList(this.value);});
+
+  document.getElementById('dmgrLogAdd').addEventListener('click',function(){
+    var name=document.getElementById('dmgrLogEmpSel').value;
+    var date=document.getElementById('dmgrLogDate').value;
+    var days=parseFloat(document.getElementById('dmgrLogDays').value)||0;
+    var note=document.getElementById('dmgrLogNote').value.trim()||'-';
+    if(!name){alert('직원을 선택하세요.');return;}
+    if(!date||!days){alert('날짜를 입력하세요.');return;}
+    var vd=getVacData();
+    if(!vd[name]) vd[name]={total:0,logs:[]};
+    if(!vd[name].logs) vd[name].logs=[];
+    var editIdx=this.getAttribute('data-edit-idx');
+    if(editIdx!==null && editIdx!==''){
+      // 수정 모드
+      var origName=this.getAttribute('data-edit-name');
+      vd[origName].logs[Number(editIdx)]={date:date,days:days,note:note};
+      this.textContent='추가'; this.style.background='#22c55e';
+      this.removeAttribute('data-edit-idx'); this.removeAttribute('data-edit-name');
+    } else {
+      vd[name].logs.push({date:date,days:days,note:note});
+    }
+    vd[name].logs.sort(function(a,b){return a.date<b.date?-1:1;});
+    saveVacData(vd);
+    document.getElementById('dmgrLogDate').value='';
+    document.getElementById('dmgrLogDays').value='1';
+    document.getElementById('dmgrLogNote').value='';
+    renderDmgrLogList(name);
+    document.dispatchEvent(new CustomEvent('vacUpdated'));
+  });
+
+  /* ── 보상휴가 탭 ── */
+  function renderDmgrOtEmpSel(){
+    var sel=document.getElementById('dmgrOtEmpSel');
+    var cur=sel.value;
+    sel.innerHTML='<option value="">직원 선택</option>'+
+      employees.map(function(e){return '<option value="'+e.name+'"'+(e.name===cur?' selected':'')+'>'+e.name+'</option>';}).join('');
+    if(cur) renderDmgrOtList(cur);
+    else { document.getElementById('dmgrOtList').innerHTML=''; document.getElementById('dmgrOtSummary').textContent=''; }
+  }
+
+  function renderDmgrOtList(name){
+    var vd=getVacData();
+    var d=vd[name]||{total:0,logs:[],overtime:[]};
+    var ot=(d.overtime||[]);
+    var earned=ot.reduce(function(s,o){return s+Number(o.earned);},0);
+    var empOt=employees.find(function(e){return e.name===name;})||{};
+    var mbtiDescOt=(empOt.mbti&&empOt.mbti!=='-'&&desc[empOt.mbti])?'<span style="font-size:12px;color:#6366f1;margin-left:8px">'+desc[empOt.mbti]+'</span>':'';
+    document.getElementById('dmgrOtSummary').innerHTML='<b>'+name+'</b>'+mbtiDescOt+' | 총 적립 <b style="color:#22c55e">+'+earned+'일</b> ('+ot.length+'건)';
+    var ul=document.getElementById('dmgrOtList');
+    if(!ot.length){
+      ul.innerHTML='<li style="color:var(--muted);font-size:14px;padding:12px">등록된 보상휴가가 없습니다.</li>';return;
+    }
+    var sortedOt=ot.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+    ul.innerHTML=sortedOt.map(function(o,i){
+      return '<li style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;background:#f0fdf4">'+
+        '<div style="font-size:13px;color:var(--muted)">'+o.date+' · '+o.hours+'시간 · '+o.note+' · <b style="color:#22c55e">+'+o.earned+'일 보상</b></div>'+
+        '<div style="display:flex;align-items:center;gap:6px">'+
+        '<button type="button" data-idx="'+i+'" data-name="'+name+'" class="dmgr-ot-edit" '+
+        'style="border:0;background:#eef4ff;color:#1d4ed8;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">수정</button>'+
+        '<button type="button" data-idx="'+i+'" data-name="'+name+'" class="dmgr-ot-del" '+
+        'style="border:0;background:#fef2f2;color:#dc2626;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">삭제</button>'+
+        '</div></li>';
+    }).join('');
+    Array.from(ul.querySelectorAll('.dmgr-ot-edit')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var n=btn.getAttribute('data-name');
+        var idx=Number(btn.getAttribute('data-idx'));
+        var vd=getVacData();
+        var ot=vd[n].overtime[idx];
+        document.getElementById('dmgrOtDate').value=ot.date;
+        document.getElementById('dmgrOtHours').value=String(ot.hours);
+        document.getElementById('dmgrOtNote').value=ot.note==='-'?'':ot.note;
+        var addBtn=document.getElementById('dmgrOtAdd');
+        addBtn.textContent='수정 저장';
+        addBtn.style.background='#1d4ed8';
+        addBtn.setAttribute('data-edit-idx', idx);
+        addBtn.setAttribute('data-edit-name', n);
+        document.getElementById('dmgrOtDate').focus();
+      });
+    });
+    Array.from(ul.querySelectorAll('.dmgr-ot-del')).forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var n=btn.getAttribute('data-name');
+        var idx=Number(btn.getAttribute('data-idx'));
+        var vd=getVacData();
+        if(vd[n]&&vd[n].overtime) vd[n].overtime.splice(idx,1);
+        saveVacData(vd);
+        var addBtn=document.getElementById('dmgrOtAdd');
+        addBtn.textContent='적립'; addBtn.style.background='#7c3aed';
+        addBtn.removeAttribute('data-edit-idx'); addBtn.removeAttribute('data-edit-name');
+        document.getElementById('dmgrOtDate').value='';
+        document.getElementById('dmgrOtHours').value='8';
+        document.getElementById('dmgrOtNote').value='';
+        renderDmgrOtList(n);
+        document.dispatchEvent(new CustomEvent('vacUpdated'));
+      });
+    });
+  }
+
+  document.getElementById('dmgrOtEmpSel').addEventListener('change',function(){renderDmgrOtList(this.value);});
+
+  document.getElementById('dmgrOtAdd').addEventListener('click',function(){
+    var name=document.getElementById('dmgrOtEmpSel').value;
+    var date=document.getElementById('dmgrOtDate').value;
+    var hours=Number(document.getElementById('dmgrOtHours').value);
+    var note=document.getElementById('dmgrOtNote').value.trim()||'-';
+    if(!name){alert('직원을 선택하세요.');return;}
+    if(!date){alert('날짜를 입력하세요.');return;}
+    var earned=hours/8;
+    var vd=getVacData();
+    if(!vd[name]) vd[name]={total:0,logs:[],overtime:[]};
+    if(!vd[name].overtime) vd[name].overtime=[];
+    var editIdx=this.getAttribute('data-edit-idx');
+    if(editIdx!==null && editIdx!==''){
+      var origName=this.getAttribute('data-edit-name');
+      vd[origName].overtime[Number(editIdx)]={date:date,hours:hours,note:note,earned:earned};
+      this.textContent='적립'; this.style.background='#7c3aed';
+      this.removeAttribute('data-edit-idx'); this.removeAttribute('data-edit-name');
+    } else {
+      vd[name].overtime.push({date:date,hours:hours,note:note,earned:earned});
+    }
+    vd[name].overtime.sort(function(a,b){return a.date<b.date?-1:1;});
+    saveVacData(vd);
+    document.getElementById('dmgrOtDate').value='';
+    document.getElementById('dmgrOtNote').value='';
+    renderDmgrOtList(name);
+    document.dispatchEvent(new CustomEvent('vacUpdated'));
+  });
+
+  /* ── 퇴사자 탭 ── */
+  function renderLeaveList(){
+    var leaveData=JSON.parse(localStorage.getItem('qaLeave')||'[]');
+    var ul=document.getElementById('leaveList');
+    if(!leaveData.length){
+      ul.innerHTML='<li style="color:var(--muted);font-size:14px;padding:12px">등록된 퇴사자가 없습니다.</li>';
+    } else {
+      ul.innerHTML=leaveData.slice().sort(function(a,b){return a.date<b.date?-1:1;}).map(function(l,i){
+        return '<li style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;background:#fff5f5">'+
+          '<div><b style="font-size:14px;color:#dc2626">'+l.name+'</b>'+
+          '<span style="margin-left:10px;font-size:13px;color:var(--muted)">'+l.date+' · '+l.note+' <span style="font-size:11px;background:#fee2e2;color:#dc2626;border-radius:999px;padding:2px 7px;font-weight:800">'+l.year+'년</span></span></div>'+
+          '<div style="display:flex;align-items:center;gap:6px">'+
+          '<button type="button" data-idx="'+i+'" class="leave-edit" style="border:0;background:#eef4ff;color:#1d4ed8;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">수정</button>'+
+          '<button type="button" data-idx="'+i+'" class="leave-del" style="border:0;background:#fef2f2;color:#dc2626;border-radius:8px;padding:4px 8px;cursor:pointer;font-weight:900;font-size:12px">삭제</button>'+
+          '</div></li>';
+      }).join('');
+      Array.from(ul.querySelectorAll('.leave-edit')).forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var ld=JSON.parse(localStorage.getItem('qaLeave')||'[]').sort(function(a,b){return a.date<b.date?-1:1;});
+          var idx=Number(btn.getAttribute('data-idx'));
+          var l=ld[idx];
+          document.getElementById('leaveEmpName').value=l.name;
+          document.getElementById('leaveDate').value=l.date;
+          document.getElementById('leaveNote').value=l.note==='-'?'':l.note;
+          var addBtn=document.getElementById('leaveAdd');
+          addBtn.textContent='수정 저장';
+          addBtn.style.background='#1d4ed8';
+          addBtn.setAttribute('data-edit-idx', idx);
+        });
+      });
+      Array.from(ul.querySelectorAll('.leave-del')).forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var ld=JSON.parse(localStorage.getItem('qaLeave')||'[]');
+          ld.splice(Number(btn.getAttribute('data-idx')),1);
+          localStorage.setItem('qaLeave',JSON.stringify(ld));
+          var addBtn=document.getElementById('leaveAdd');
+          addBtn.textContent='등록'; addBtn.style.background='#dc2626';
+          addBtn.removeAttribute('data-edit-idx');
+          document.getElementById('leaveEmpName').value='';
+          document.getElementById('leaveDate').value='';
+          document.getElementById('leaveNote').value='';
+          renderLeaveList();
+          updateKpi();
+        });
+      });
+    }
+  }
+
+  document.getElementById('leaveAdd').addEventListener('click',function(){
+    var name=document.getElementById('leaveEmpName').value.trim();
+    var date=document.getElementById('leaveDate').value;
+    var note=document.getElementById('leaveNote').value.trim()||'-';
+    if(!name||!date){alert('성명과 퇴사일을 입력하세요.');return;}
+    var year=new Date(date).getFullYear();
+    var ld=JSON.parse(localStorage.getItem('qaLeave')||'[]');
+    var editIdx=this.getAttribute('data-edit-idx');
+    if(editIdx!==null && editIdx!==''){
+      var sorted=ld.slice().sort(function(a,b){return a.date<b.date?-1:1;});
+      var orig=sorted[Number(editIdx)];
+      var realIdx=ld.findIndex(function(x){return x.name===orig.name&&x.date===orig.date;});
+      if(realIdx>-1) ld[realIdx]={name:name,date:date,note:note,year:year};
+      this.textContent='등록'; this.style.background='#dc2626';
+      this.removeAttribute('data-edit-idx');
+    } else {
+      ld.push({name:name,date:date,note:note,year:year});
+    }
+    ld.sort(function(a,b){if(a.date!==b.date)return a.date<b.date?-1:1;return a.name<b.name?-1:1;});
+    localStorage.setItem('qaLeave',JSON.stringify(ld));
+    document.getElementById('leaveEmpName').value='';
+    document.getElementById('leaveDate').value='';
+    document.getElementById('leaveNote').value='';
+    renderLeaveList();
+    updateKpi();
+  });
+
+  // 휴가 변경 시 하단 테이블 자동 갱신 (IIFE vacData 참조 불가하여 storage 이벤트 대신 reload)
+  document.addEventListener('vacUpdated',function(){
+    // vacTbody 직접 갱신: vacData 재조회
+    var vd=getVacData();
+    var tbody=document.getElementById('vacTbody');
+    if(!tbody) return;
+    function bc(p){if(p>=90)return '#ef4444';if(p>=70)return '#f59e0b';return '#22c55e';}
+    function bdg(p){if(p>=90)return 'vac-used-tag badge-red';if(p>=70)return 'vac-used-tag badge-yellow';return 'vac-used-tag badge-green';}
+    function ud(name){var d=vd[name];if(!d||!d.logs)return 0;return d.logs.reduce(function(s,l){return s+Number(l.days);},0);}
+    tbody.innerHTML=employees.map(function(e){
+      var d=vd[e.name]||{total:0,logs:[],overtime:[]};
+      var base=Number(d.total)||0;
+      var otEarned=(d.overtime||[]).reduce(function(s,o){return s+Number(o.earned);},0);
+      var total=base+otEarned;
+      var used=ud(e.name);
+      var remain=Math.max(0,total-used);
+      var pct=total>0?Math.round(used/total*100):0;
+      var color=bc(pct);
+      return '<tr>'+
+        '<td><b>'+e.name+'</b></td><td>'+e.job+'</td>'+
+        '<td style="text-align:center;color:#111827;font-weight:800">'+base+'일</td>'+
+        '<td style="text-align:center;color:#22c55e;font-weight:800">+'+otEarned+'일</td>'+
+        '<td style="text-align:center;color:#111827;font-weight:800">'+total+'일</td>'+
+        '<td style="text-align:center;color:#7c3aed;font-weight:800">'+used+'일</td>'+
+        '<td style="text-align:center;color:#2563eb;font-weight:800">'+remain+'일</td>'+
+        '<td><div style="display:flex;align-items:center;gap:8px"><div class="vac-bar-wrap" style="flex:1"><div class="vac-bar" style="width:'+pct+'%;background:'+color+'"></div></div><span style="font-size:12px;font-weight:800;color:'+color+'">'+pct+'%</span></div></td>'+
+        '<td><span class="'+bdg(pct)+'">'+(pct>=90?'⚠️ 주의':pct>=70?'📋 관리':'✅ 정상')+'</span></td>'+
+        '</tr>';
+    }).join('');
+    // KPI 갱신
+    var now2=new Date(); var ty=now2.getFullYear(); var tm=now2.getMonth()+1; var today2=now2.toISOString().slice(0,10);
+    var warn=employees.filter(function(e){var d=vd[e.name]||{total:0};var ote=(d.overtime||[]).reduce(function(s,o){return s+Number(o.earned);},0);var t=(Number(d.total)||0)+ote;var u=ud(e.name);return t>0&&u/t>=0.9;}).length;
+    var thisMonthVac=employees.filter(function(e){var d=vd[e.name];if(!d||!d.logs)return false;return d.logs.some(function(l){var dt=new Date(l.date);return dt.getFullYear()===ty&&dt.getMonth()+1===tm;});}).length;
+    var thisMonthOt=employees.filter(function(e){var d=vd[e.name];if(!d||!d.overtime)return false;return d.overtime.some(function(o){var dt=new Date(o.date);return dt.getFullYear()===ty&&dt.getMonth()+1===tm;});}).length;
+    var upcoming=employees.filter(function(e){var d=vd[e.name];if(!d||!d.logs)return false;return d.logs.some(function(l){return l.date>today2;});}).length;
+    document.getElementById('vacKpis').innerHTML=
+      '<div class="vac-kpi" data-kpi="warn" style="cursor:pointer"><small>주의 인원</small><b style="color:#dc2626">'+warn+'명</b><span>소진율 90% 이상</span></div>'+
+      '<div class="vac-kpi" data-kpi="monthot" style="cursor:pointer"><small>이번달 보상 인원</small><b style="color:#22c55e">'+thisMonthOt+'명</b><span>'+tm+'월 보상휴가 등록자</span></div>'+
+      '<div class="vac-kpi" data-kpi="monthvac" style="cursor:pointer"><small>이번달 휴가 인원</small><b style="color:#7c3aed">'+thisMonthVac+'명</b><span>'+tm+'월 휴가 사용자</span></div>'+
+      '<div class="vac-kpi" data-kpi="upcoming" style="cursor:pointer"><small>휴가 예정 인원</small><b style="color:#2563eb">'+upcoming+'명</b><span>향후 휴가 예정자</span></div>';
+  });
+
+})();
+
+});
+</script>
+</body>
+</html>
